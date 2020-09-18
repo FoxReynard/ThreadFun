@@ -25,13 +25,13 @@ namespace ThreadFun
 
 					
 					Console.ForegroundColor = color;
-					lock (locker)
+					lock (locker)  // курсор то разделяемый ресурс
 					{
 						Console.SetCursorPosition(0, (int)lineNumber);
 						for (int i = 0; i <=40; i++)
 						{
 
-							Console.Write('|');
+							Console.Write('.');
 							Thread.Sleep(1); 
 						}
 						Console.Write('|');
