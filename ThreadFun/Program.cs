@@ -23,21 +23,19 @@ namespace ThreadFun
 					if (color == ConsoleColor.Black)
 						continue;
 
-					
 					Console.ForegroundColor = color;
 					lock (locker)  // курсор то разделяемый ресурс
 					{
 						Console.SetCursorPosition(0, (int)lineNumber);
-						for (int i = 0; i <=40; i++)
+						for (int i = 0; i <= 10; i++)
 						{
 
 							Console.Write('.');
-							Thread.Sleep(1); 
+							Thread.Sleep(1);
 						}
 						Console.Write('|');
 						Console.SetCursorPosition(0, (int)lineNumber);
 					}
-					
 				}
 			}
 		}
@@ -52,17 +50,8 @@ namespace ThreadFun
 			{
 				Thread thread = new Thread(new ParameterizedThreadStart(Print));
 				thread.Start(i);
-
-
-
-
 			}
-
-
-
-
-
-			//Print(5);
+			
 		}
 	}
 }
